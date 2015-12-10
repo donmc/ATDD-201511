@@ -56,6 +56,11 @@ public class WhenRegisteringMember {
 		app.lookupMember("batman");
 	}
 	
+	@Test(expected=IllegalArgumentException.class)
+	public void shouldNotAllowNewMembersWithExistingUserName() {
+		app.registerMember("donmc");
+	}
+	
 	
 
 }

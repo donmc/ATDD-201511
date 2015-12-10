@@ -7,7 +7,7 @@ public class Member {
 	private int ytdMiles;
 	private int balanceMiles;
 	
-	public Member(String userName) {
+	public Member(String userName) { 
 		this.userName = userName;
 		this.status = Status.RED;
 		this.ytdMiles = 0;
@@ -28,6 +28,14 @@ public class Member {
 	
 	public int getYtdMiles() {
 		return ytdMiles;
+	}
+
+	public void registerFlownMiles(int milesFlown) {
+		ytdMiles += milesFlown;
+		balanceMiles += milesFlown;
+		status = Status.calculateStatusFor(ytdMiles);
+	
+		
 	}
 	
 }
